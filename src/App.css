@@ -1,3 +1,4 @@
+/* Base App Styles */
 .App {
   text-align: center;
 }
@@ -32,7 +33,252 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 24px;
+  width: 30px;
+  padding: 5px;
+  margin: 10px 0 20px 15px;
+}
+
+.mobile-menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Menu Common Styles */
+.mobile-menu {
+  background-color: #ffffff;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.mobile-menu.active {
+  max-height: 1000px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile Menu List */
+.mobile-menu nav ul {
+  list-style: none;
+  padding: 0 20px;
+  margin: 0;
+}
+
+.mobile-menu nav ul li {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.mobile-menu nav ul li:hover {
+  background-color: #f9f9f9;
+}
+
+.mobile-menu nav ul li a {
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Submenu Styles */
+.mega_menu {
+  display: none;
+  padding-left: 20px;
+  background: #f8f8f8;
+  border-left: 3px solid #007bff;
+  margin-top: 8px;
+  border-radius: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+.mega_menu.open {
+  display: block;
+}
+
+.mega_menu li {
+  padding: 8px 10px;
+  font-size: 15px;
+}
+
+.mega_menu li a {
+  color: #555;
+  text-decoration: none;
+}
+
+/* Mega Parent Arrow Styling */
+.mega_parent>a {
+  position: relative;
+}
+
+.mega_parent>a::after {
+  content: "\f107";
+  /* down arrow */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-size: 12px;
+  margin-left: auto;
+}
+
+.mega_parent>a.open::after {
+  content: "\f106";
+  /* up arrow */
+}
+
+/* Media Query for Mobile */
+@media (max-width: 991px) {
+  .mobile-menu {
+    position: relative;
+    /* override absolute for mobile context */
+  }
+}
+
+.cart-plus-minus {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  width: 100px;
+  justify-content: space-between;
+  padding: 5px 10px;
+}
+
+.cart-plus-minus input.cart-plus-minus-box {
+  border: none;
+  width: 30px;
+  text-align: center;
+  font-size: 16px;
+  outline: none;
+}
+
+.qtybtn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 20px;
+  line-height: 1;
+  color: #000;
+}
+
+.qtybtn:focus {
+  outline: none;
+}
+
+/* Table styling */
+.cart_main_area table th,
+.cart_main_area table td {
+  padding: 15px;
+  vertical-align: middle;
+}
+
+/* Cart totals section */
+.cart_totals h4 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+/* Quantity input styling */
+.cart-plus-minus-box {
+  width: 50px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+
+/* 🔥 Perfectly rounded green buttons */
+.cart_main_area input[type="submit"],
+.cart_main_area .buttons-carts input[type="submit"],
+.cart_main_area .buttons-carts a,
+.cart_main_area .wc-proceed-to-checkout a {
+  padding: 15px 30px;
+  border-radius: 50px;
+  background-color: #84b816;
+  color: white;
+  font-weight: bold;
+  border: none;
+  font-size: 16px;
+  height: 50px;
+  display: inline-block;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: none;
+}
+
+/* Light outline button (like "Continue Shopping") */
+.cart_main_area .buttons-carts a.btn-outline-success {
+  background-color: #84b816;
+  color: white;
+  border: none;
+}
+
+/* Coupon code input styling */
+.cart_main_area .coupon input[type="text"] {
+  height: 50px;
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  width: 70%;
+  margin-bottom: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+.input-error {
+  border: 1px solid red !important;
+}
+
+.error-text {
+  color: red;
+  font-size: 15px;
+}
+
+.error-text {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+.error-border {
+  border: 1px solid red !important;
+}
+
+.single_brand_logo img {
+  transition: transform 0.3s ease;
+}
+
+.single_brand_logo img:hover {
+  transform: scale(1.05);
 }
